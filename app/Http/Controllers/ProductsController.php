@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+
+    public function show(Product $product)
+    {
+      return $product;
+    }
+
+
 /*    public function index()
     {
         $this->authorize('viewAny', Contact::class);

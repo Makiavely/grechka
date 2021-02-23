@@ -75,7 +75,30 @@
 
 <script>
 export default {
-    name: "App"
+    name: "App",
+
+    props: [
+        'user'
+    ],
+
+    created() {
+        window.axios.interceptors.request.use(
+            (config) => {
+                if (config.method == 'get')
+                {
+                   /* Это бредовая строка, но она была с добавлением Токена в версии Виктора*/
+                    config.url = config.url
+                } else
+                    {
+                    config.data = {
+                        ...config.data,
+
+                    };
+                }
+                return config;
+            }
+        )
+    }
 }
 </script>
 

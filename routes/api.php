@@ -22,4 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Этого роута в конечной версии Jot нету, наверное его переменсили во Vue-router
 //Route::get('/products', 'ProductsController@index');
 
+Route::get('/products', 'ProductsController@index');
 Route::get('/products/{product}', 'ProductsController@show');
